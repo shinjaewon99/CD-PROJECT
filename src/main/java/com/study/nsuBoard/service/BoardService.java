@@ -38,6 +38,9 @@ public class BoardService {
 
         boardRepository.save(board);
     }
+    public void write(Board board){
+        boardRepository.save(board);
+    }
 
     // 게시글 리스트 처리
     public Page<Board> boardList(Pageable pageable) {
@@ -55,5 +58,10 @@ public class BoardService {
     public Board boardView(Integer id) {
 
         return boardRepository.findById(id).get();
+    }
+
+    // 특정 게시글 삭제
+    public void boardDelete(Integer id){
+        boardRepository.deleteById(id);
     }
 }

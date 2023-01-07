@@ -35,7 +35,7 @@ public class StudentEntity {
     public static StudentEntity toStudentEntity(StudentDto studentDto){
         StudentEntity studentEntity = new StudentEntity();
         studentEntity.setId(studentDto.getId());
-        studentEntity.setStudent(studentDto.getStudentName());
+        studentEntity.setStudent(studentDto.getStudent());
         studentEntity.setStudentPassword(studentDto.getStudentPassword());
         studentEntity.setStudentPasswordCheck(studentDto.getStudentPasswordCheck());
         studentEntity.setStudentName(studentDto.getStudentName());

@@ -4,6 +4,7 @@ import com.study.nsuBoard.dto.StudentDto;
 import com.study.nsuBoard.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -32,23 +33,26 @@ public class MemberController {
 
     @GetMapping("/login")
     public String loginForm(){
-        return "HomePage/login";
+        return "MainPage/chooseBoardOrReservation";
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute StudentDto studentDto , HttpSession session){
+    public String login(@ModelAttribute StudentDto studentDto , Model model, HttpSession session){
         StudentDto loginResult = studentService.login(studentDto);
 
         if(loginResult != null){
-            session.setAttribute("loginId" , loginResult.getId());
+            model.addAttribute("message", "회원가입이 완료되었습니다.");
+            model.addAttribute("searchUrl", "/HomePage/home");
+            session.setAttribute("loginId" , loginResult.getStudent());
+
             return "MainPage/chooseBoardOrReservation";
         }else {
-            return "HomePage/login";
+            return "MainPage/chooseBoardOrReservation";
         }
 
     }
 
-    @GetMapping("/logOut")
+    @GetMapping("/LogOut")
     public String logOut(HttpSession session){
         session.invalidate();
         return "HomePage/home";

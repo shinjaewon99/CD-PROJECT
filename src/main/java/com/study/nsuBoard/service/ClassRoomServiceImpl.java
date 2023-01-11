@@ -1,27 +1,27 @@
 package com.study.nsuBoard.service;
 
-import com.study.nsuBoard.dto.ClassRoomDto;
-import com.study.nsuBoard.dto.SeatDto;
-import com.study.nsuBoard.repository.BoardRepository;
+import com.study.nsuBoard.dto.AbleTimeDto;
+import com.study.nsuBoard.repository.AbleTimeRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
+@Service
+@RequiredArgsConstructor
+@Transactional
+
 public class ClassRoomServiceImpl implements ClassRoomService {
 
-    private final BoardRepository boardRepository;
-
-    public ClassRoomServiceImpl(BoardRepository boardRepository) {
-        this.boardRepository = boardRepository;
-    }
-    @Override
-    public List<SeatDto> getAvailableVaccineNameList(Long hospitalId) {
-        return reserveItemRepository.findAvailableVaccines(hospitalId)
-                .stream().map(v -> new VaccineReserveDto(v.getId(), v.getVaccineName())).collect(Collectors.toList());
-    }
+    private final AbleTimeRepository ableTimeRepository;
 
     @Override
-    public List<ClassRoomDto> getAvailableTime(Long classRoomId) {
-        return null;
+    public List<AbleTimeDto> getAvailableTimes(Long id) {
+        return reserveItemRepository.findAvailableTimesByAvailableDateId(id)
+                .stream().map(t -> new AvailableTimeDto(t.getId(), t.getTime())).collect(Collectors.toList());
     }
 }

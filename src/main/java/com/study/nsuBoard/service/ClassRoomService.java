@@ -1,11 +1,11 @@
 package com.study.nsuBoard.service;
 
-import com.study.nsuBoard.dto.ClassRoomDto;
+import com.study.nsuBoard.dto.AbleTimeDto;
 
 import java.util.List;
 
 public interface ClassRoomService {
 
 
-    List<ClassRoomDto> getAvailableTime(Long classRoomId);
+    List<AbleTimeDto> getAvailableTimes(Long id);
 }

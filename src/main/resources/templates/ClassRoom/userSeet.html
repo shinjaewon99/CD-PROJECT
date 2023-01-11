@@ -2,9 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>예약 폼</title>
 </head>
-<body>
 
+
+<body>
+<div class="layout">
+  <form action="/nsuBoard/seat1" method="post" enctype="multipart/form-data">
+    <input name="title" type="text">
+    <textarea name="content"></textarea>
+    <input type="file" name="file">
+    <button type="submit">예약</button>
+  </form>
+</div>
 </body>
 </html>

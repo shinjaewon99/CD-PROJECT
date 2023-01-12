@@ -1,20 +1,18 @@
 package com.study.nsuBoard.repository;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.data.jpa.repository.Query;
+import com.study.nsuBoard.dto.SeatDto;
+import com.study.nsuBoard.entity.ClassRoomEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+import java.util.List;
 
 
 @Repository
-@RequiredArgsConstructor
-public class ReservationRepository {
+public interface ReservationRepository extends JpaRepository<ClassRoomEntity, Long> {
 
-    @Query("select new com.threefam.reserve.dto.reserve.ReserveItemSimpleDto(ri.id, ri.Hospital.hospitalName, ri.vaccineName, ri.reserveDate, ri.reserveTime, ri.status) " +
-            "from ReserveItem  ri " +
-            "where ri.user.id = :userId")
-    Optional<ReserveItemSimpleDto> findByUserId(Long userId);
+
+    List<ClassRoomEntity> findByUserId(Long userId);
 
 }
 

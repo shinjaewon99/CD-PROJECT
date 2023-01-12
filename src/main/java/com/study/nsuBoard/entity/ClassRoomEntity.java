@@ -1,5 +1,6 @@
 package com.study.nsuBoard.entity;
 
+import com.study.nsuBoard.dto.SeatDto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,31 +11,23 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "classroom")
 public class ClassRoomEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long reservationId;
+    private Long Id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student")
-    private StudentEntity studentEntity;
+    private String seatNumber;
 
     @Column
-    private LocalDateTime startDate;
-
-    @Column
-    private LocalDateTime endDate;
-
-
-    @Builder(builderMethodName = "createAvailableTime")
-
-    public void setEndDate(LocalDateTime endDate) {
-        this.endDate = endDate;
+    private LocalDateTime time;
+    public static ClassRoomEntity toclassRoomEntity(SeatDto seatDto){
+        ClassRoomEntity classRoomEntity = new ClassRoomEntity();
+        classRoomEntity.setId(seatDto.getId());
+        classRoomEntity.setSeatNumber(seatDto.getSeatNumber());
+        classRoomEntity.setTime(seatDto.getLocalDateTime());
+        return classRoomEntity;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
-    }
+
 }

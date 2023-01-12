@@ -1,24 +1,24 @@
 package com.study.nsuBoard.controller;
 
-import com.study.nsuBoard.dto.AbleTimeDto;
+
+import com.study.nsuBoard.dto.SeatDto;
 import com.study.nsuBoard.entity.ClassRoomEntity;
-import com.study.nsuBoard.service.ClassRoomService;
+import com.study.nsuBoard.repository.ReservationRepository;
+import com.study.nsuBoard.service.ReservationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/nsuBoard")
 public class ChooseController {
-    private ClassRoomService classRoomService;
+    private final ReservationService reservationService;
 
     @GetMapping("/chooseBoardOrReservation")
     public String chooseForm() {
@@ -53,16 +53,28 @@ public class ChooseController {
 
     @GetMapping("/classroom1")
     public String classroom1() {
-        return "ClassRoom/seetNumber";
+        return "ClassRoom/seatNumber";
     }
 
+
     @GetMapping("/seat1")
-    public String getSeat1(@PathVariable Long id, Model model) {
-        List<AbleTimeDto> times = classRoomService.getAvailableTimes(id);
-//        model.addAttribute("hospitalId", hospitalId);
-        model.addAttribute("times", times);
+    public String getSeat1() {
+
+
         return "ClassRoom/userSeet";
     }
+
+    @PostMapping("/seat1")
+    public String setSeat1(@ModelAttribute SeatDto seatDto, Model model){
+
+        reservationService.reservationSave(seatDto);
+        System.out.println(seatDto);
+        model.addAttribute("message", "예약이 완료되었습니다.");
+        model.addAttribute("searchUrl", "classroom1");
+
+        return "Board/message";
+    }
+
 
 }
 

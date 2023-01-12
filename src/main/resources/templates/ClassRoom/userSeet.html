@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>예약 폼</title>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <style>
+    * {
+      font-size: 16px;
+      font-family: Consolas, sans-serif;
+    }
+  </style>
 </head>
-
-
 <body>
-<div class="layout">
-  <form action="/nsuBoard/seat1" method="post" enctype="multipart/form-data">
-    <input name="title" type="text">
-    <textarea name="content"></textarea>
-    <input type="file" name="file">
-    <button type="submit">예약</button>
-  </form>
-</div>
+<form action="/nsuBoard/seat1" method="post">
+  <p><input type="time"></p>
+  <p><input type="submit" value="Submit"></p>
+</form>
 </body>
 </html>

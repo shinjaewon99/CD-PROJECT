@@ -1,3 +1,4 @@
+/*
 package com.study.nsuBoard.dto;
 
 import lombok.AllArgsConstructor;
@@ -9,3 +10,4 @@ public class AbleTimeDto {
     private Long id;
     private Integer time;
 }
+*/

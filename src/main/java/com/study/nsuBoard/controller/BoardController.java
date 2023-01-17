@@ -1,3 +1,4 @@
+/*
 package com.study.nsuBoard.controller;
 
 
@@ -107,3 +108,4 @@ public class BoardController {
     }
 
 }
+*/

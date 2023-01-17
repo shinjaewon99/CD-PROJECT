@@ -1,3 +1,4 @@
+/*
 package com.study.nsuBoard.service;
 
 
@@ -65,3 +66,4 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 }
+*/

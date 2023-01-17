@@ -1,3 +1,4 @@
+/*
 package com.study.nsuBoard.repository;
 
 
@@ -12,3 +13,4 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
 
     Page<Board> findByTitleContaining(String searchKeyword, Pageable pageable);
 }
+*/

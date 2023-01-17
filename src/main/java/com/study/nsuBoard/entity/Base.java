@@ -1,3 +1,4 @@
+/*
 package com.study.nsuBoard.entity;
 
 
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @Getter
-public class BaseEntity {
+public class Base {
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdTime;
@@ -22,4 +23,4 @@ public class BaseEntity {
     @UpdateTimestamp
     @Column(insertable = false)
     private LocalDateTime updatedTime;
-}
+}*/

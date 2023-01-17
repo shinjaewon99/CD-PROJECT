@@ -1,7 +1,8 @@
+/*
 package com.study.nsuBoard.dto;
 
 
-import com.study.nsuBoard.entity.CommentEntity;
+import com.study.nsuBoard.entity.Comment;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class CommentDto extends CommentEntity {
+public class CommentDto extends Comment {
 
     private Long id;
     private String commentWriter;
@@ -19,14 +20,15 @@ public class CommentDto extends CommentEntity {
     private Integer boardId;
     private LocalDateTime commentSavedTime;
 
-    public static CommentDto toCommnetDto(CommentEntity commentEntity) {
+    public static CommentDto toCommnetDto(Comment comment) {
         CommentDto commentDto = new CommentDto();
-        commentDto.setId(commentEntity.getId());
-        commentDto.setCommentWriter(commentEntity.getCommentWriter());
-        commentDto.setCommentContents(commentEntity.getCommentContents());
-        commentDto.setCommentSavedTime(commentEntity.getCreatedTime());
-        commentDto.setBoardId(commentEntity.getBoard().getId());
+        commentDto.setId(comment.getId());
+        commentDto.setCommentWriter(comment.getCommentWriter());
+        commentDto.setCommentContents(comment.getCommentContents());
+        commentDto.setCommentSavedTime(comment.getCreatedTime());
+        commentDto.setBoardId(comment.getBoard().getId());
 
         return commentDto;
     }
 }
+*/

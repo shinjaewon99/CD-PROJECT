@@ -1,42 +1,47 @@
 package com.study.nsuBoard.service;
 
 
-import com.study.nsuBoard.dto.StudentDto;
-import com.study.nsuBoard.entity.StudentEntity;
+import com.study.nsuBoard.entity.Student;
 import com.study.nsuBoard.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    public void save(StudentDto studentDto) {
-        StudentEntity studentEntity = StudentEntity.toStudentEntity(studentDto);
-
-
-        studentRepository.save(studentEntity);
-
+    // 회원가입
+    public Long join(Student student) {
+        validateDuplicateStudentId(student);
+        studentRepository.save(student);
+        return student.getId();
     }
 
-    // Db에 있으면 로그인 아직 구현 X
-    public StudentDto login(StudentDto studentDto) {
-
-        Optional<StudentEntity> byStudent = studentRepository.findByStudent(studentDto.getStudent());
-        if (byStudent.isPresent()) {
-            StudentEntity studentEntity = byStudent.get();
-            if (studentEntity.getStudentPassword().equals(studentDto.getStudentPassword())) {
-                StudentDto dto = StudentDto.toStudentDto(studentEntity);
-                return dto;
-            } else {
-                return null;
-            }
-        } else {
-            return null;
+    private void validateDuplicateStudentId(Student student) {
+        List<Student> findStudentId = studentRepository.findByStudentId(student.getStudent());
+        if (!(findStudentId.isEmpty())) {
+            throw new IllegalStateException("이미 등록된 학번입니다");
         }
     }
+
+
+    // 로그인
+    public String login(Student student) {
+        List<Student> findStudent = studentRepository.findByStudentId(student.getStudent());
+        Student findStudentId = studentRepository.findOne(student.getId());
+
+        if(findStudent == null){
+            System.out.println("학번이 없음");
+        }
+        if()
+
+
+    }
+
 }

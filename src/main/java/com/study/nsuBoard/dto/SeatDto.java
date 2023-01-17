@@ -1,7 +1,8 @@
+/*
 package com.study.nsuBoard.dto;
 
 
-import com.study.nsuBoard.entity.ClassRoomEntity;
+import com.study.nsuBoard.entity.ClassRoom;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -18,12 +19,13 @@ public class SeatDto {
     private String seatNumber;
     private LocalDateTime localDateTime;
 
-    public static SeatDto toSeatDto(ClassRoomEntity classRoomEntity){
+    public static SeatDto toSeatDto(ClassRoom classRoom){
         SeatDto seatDto = new SeatDto();
-        seatDto.setId(classRoomEntity.getId());
-        seatDto.setSeatNumber(classRoomEntity.getSeatNumber());
-        seatDto.setLocalDateTime(classRoomEntity.getTime());
+        seatDto.setId(classRoom.getId());
+        seatDto.setSeatNumber(classRoom.getSeatNumber());
+        seatDto.setLocalDateTime(classRoom.getTime());
         return seatDto;
     }
 
 }
+*/

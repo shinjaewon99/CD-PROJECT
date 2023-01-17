@@ -1,9 +1,10 @@
+/*
 package com.study.nsuBoard.service;
 
 
 import com.study.nsuBoard.dto.CommentDto;
 import com.study.nsuBoard.entity.Board;
-import com.study.nsuBoard.entity.CommentEntity;
+import com.study.nsuBoard.entity.Comment;
 import com.study.nsuBoard.repository.BoardRepository;
 import com.study.nsuBoard.repository.CommentRepository;
 import lombok.RequiredArgsConstructor;
@@ -24,22 +25,23 @@ public class CommentService {
     public Long save(CommentDto commentDto) {
         Optional<Board> optionalBoard = boardRepository.findById(commentDto.getBoardId());
         Board board = optionalBoard.get();
-        CommentEntity commentEntity = CommentEntity.toSaveEntity(commentDto, board);
+        Comment comment = Comment.toSaveEntity(commentDto, board);
 
-        return commentRepository.save(commentEntity).getId();
+        return commentRepository.save(comment).getId();
 
     }
 
     public List<CommentDto> findAll(Integer boardId) {
 
         Board board = boardRepository.findById(boardId).get();
-        List<CommentEntity> allByBoardOrderByIdDesc =
+        List<Comment> allByBoardOrderByIdDesc =
                 commentRepository.findAllByBoardOrderByIdDesc(board);
         List<CommentDto> commentDtoList = new ArrayList<>();
-        for (CommentEntity commentEntity : allByBoardOrderByIdDesc) {
-            CommentDto commentDto = CommentDto.toCommnetDto(commentEntity);
+        for (Comment comment : allByBoardOrderByIdDesc) {
+            CommentDto commentDto = CommentDto.toCommnetDto(comment);
             commentDtoList.add(commentDto);
         }
         return commentDtoList;
     }
 }
+*/

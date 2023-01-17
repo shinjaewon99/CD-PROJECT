@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<h2>예약</h2>
-<form action="/nsuBoard/login" method="post">
-    학번(아이디): <input type="text" name="student"> <br>
-    비밀번호: <input type="password" name="studentPassword"> <br>
-
-</form>
-<a href="/nsuBoard/save">회원가입</a>
-<a href="/nsuBoard/login">로그인</a>
-
-
-
-</body>
-</html>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <div class="jumbotron">
+        <h1>Nsu 세미콜론</h1>
+        <input type="text" class="form-control"
+               placeholder="학번을 입력하세요">
+        <input type="text" class="form-control"
+               placeholder="비밀번호를 입력하세요">
+        <p class="lead"></p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/nsuBoard/save">회원 가입</a>
+            <a class="btn btn-lg btn-secondary" href="/nsuBoard/login">로그인</a>
+        </p>
+    </div>
+    <div th:replace="fragments/footer :: footer"/>
+</div> <!-- /container -->

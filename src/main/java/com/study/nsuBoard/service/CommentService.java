@@ -1,4 +1,3 @@
-/*
 package com.study.nsuBoard.service;
 
 
@@ -44,4 +43,3 @@ public class CommentService {
         return commentDtoList;
     }
 }
-*/

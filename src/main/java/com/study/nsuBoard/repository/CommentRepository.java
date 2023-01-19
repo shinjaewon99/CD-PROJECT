@@ -1,4 +1,3 @@
-/*
 package com.study.nsuBoard.repository;
 
 import com.study.nsuBoard.entity.Board;
@@ -11,4 +10,3 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     List<Comment> findAllByBoardOrderByIdDesc(Board board);
 
 }
-*/

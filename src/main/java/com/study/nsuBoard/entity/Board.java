@@ -1,4 +1,3 @@
-/*
 package com.study.nsuBoard.entity;
 
 
@@ -21,7 +20,7 @@ public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "board_id")
-    private Long id;
+    private Integer id;
 
     private String title;
 
@@ -39,4 +38,3 @@ public class Board {
     private List<Comment> commentList = new ArrayList<>();
 
 }
-*/

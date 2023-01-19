@@ -1,4 +1,3 @@
-/*
 package com.study.nsuBoard.service;
 
 
@@ -55,6 +54,10 @@ public class BoardService {
         return boardRepository.findByTitleContaining(searchKeyword, pageable);
     }
 
+/*    public List<Board> searchBoard(BoardSerach boardSerach){
+        return boardRepository.findAll()
+    }*/
+
     // 특정 게시글 불러오기
     public Board boardView(Integer id) {
 
@@ -66,4 +69,3 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 }
-*/

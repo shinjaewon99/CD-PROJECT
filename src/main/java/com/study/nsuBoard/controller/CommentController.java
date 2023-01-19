@@ -1,4 +1,3 @@
-/*
 package com.study.nsuBoard.controller;
 
 
@@ -23,7 +22,6 @@ public class CommentController {
 
     @PostMapping("/save")
     public ResponseEntity save(@ModelAttribute CommentDto commentDto) {
-        System.out.println("commentDto = " + commentDto);
         Long saveResult = commentService.save(commentDto);
 
 
@@ -35,4 +33,3 @@ public class CommentController {
 
 
 }
-*/

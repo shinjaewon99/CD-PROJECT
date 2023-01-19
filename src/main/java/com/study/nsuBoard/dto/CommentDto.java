@@ -1,4 +1,3 @@
-/*
 package com.study.nsuBoard.dto;
 
 
@@ -31,4 +30,3 @@ public class CommentDto extends Comment {
         return commentDto;
     }
 }
-*/

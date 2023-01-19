@@ -1,4 +1,3 @@
-/*
 package com.study.nsuBoard.controller;
 
 
@@ -32,6 +31,11 @@ public class BoardController {
 
         return "Board/boardwrite";
     }
+    @GetMapping("/nsuBoard/Board")
+    public String board() {
+        return "redirect:/board/list";
+    }
+
 
     @PostMapping("/writepro")
     public String boardWritePro(Board board, Model model, MultipartFile file) throws Exception {
@@ -108,4 +112,3 @@ public class BoardController {
     }
 
 }
-*/

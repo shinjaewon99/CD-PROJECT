@@ -16,7 +16,6 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    // 회원가입
     public Long join(Student student) {
         validateDuplicateStudentId(student);
         studentRepository.save(student);
@@ -32,16 +31,17 @@ public class StudentService {
 
 
     // 로그인
-    public String login(Student student) {
-        List<Student> findStudent = studentRepository.findByStudentId(student.getStudent());
-        Student findStudentId = studentRepository.findOne(student.getId());
-
-        if(findStudent == null){
-            System.out.println("학번이 없음");
+    public String login() {
+        Student student = new Student();
+        List<Student> findStudents = studentRepository.findByStudentId(student.getStudent());
+        String studentId = student.getStudent();
+        for (Student findStudent : findStudents) {
+            if (!(studentId == findStudent.getStudent())) {
+                return null;
+            }
         }
-        if()
-
-
+        studentRepository.save(student);
+        return student.getStudent();
     }
 
 }

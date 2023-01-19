@@ -1,15 +1,10 @@
-/*
 package com.study.nsuBoard.controller;
 
 
-import com.study.nsuBoard.dto.SeatDto;
-import com.study.nsuBoard.service.ReservationService;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -17,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("/nsuBoard")
 public class ChooseController {
-    private final ReservationService reservationService;
 
     @GetMapping("/chooseBoardOrReservation")
     public String chooseForm() {
@@ -63,8 +57,7 @@ public class ChooseController {
         return "ClassRoom/userSeet";
     }
 
- */
-/*   @PostMapping("/seat1")
+  /* @PostMapping("/seat1")
     public String setSeat1(@ModelAttribute SeatDto seatDto, Model model){
 
         reservationService.reservationSave(seatDto);
@@ -73,11 +66,10 @@ public class ChooseController {
         model.addAttribute("searchUrl", "classroom1");
 
         return "Board/message";
-    }*//*
+    }*/
 
 
 
 }
 
 
-*/

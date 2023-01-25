@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+  <div th:replace="fragments/bodyHeader :: bodyHeader" />
+  <div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>번호</th>
+        <th>시간</th>
+        <th>분</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="reservation : ${reservationList}">
+        <td th:text="${reservation.id}"></td>
+        <td th:text="${reservation.hour}"></td>
+        <td th:text="${reservation.minute}"></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+  <div th:replace="fragments/footer :: footer" />
+</div>
+</body>
+</html>

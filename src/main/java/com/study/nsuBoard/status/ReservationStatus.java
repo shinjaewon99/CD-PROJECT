@@ -1,5 +1,5 @@
 package com.study.nsuBoard.status;
 public enum ReservationStatus {
-    RESERVATION, CANCEL
+    OK_RESERVATION, NO_RESERVATION
 
 }

@@ -50,22 +50,14 @@ public class ChooseController {
     }
 
 
-    @GetMapping("/seat1")
-    public String getSeat1() {
 
-
-        return "ClassRoom/userSeet";
-    }
 
   /* @PostMapping("/seat1")
     public String setSeat1(@ModelAttribute SeatDto seatDto, Model model){
 
         reservationService.reservationSave(seatDto);
         System.out.println(seatDto);
-        model.addAttribute("message", "예약이 완료되었습니다.");
-        model.addAttribute("searchUrl", "classroom1");
 
-        return "Board/message";
     }*/
 
 

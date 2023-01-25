@@ -33,12 +33,11 @@ public class Student {
     @Column
     private String department;
 
-//    @OneToOne(fetch = LAZY)
-//    @JoinColumn(name = "classRoom_id")
-//    private ClassRoom classRoom;
-//
-//    @OneToMany(mappedBy = "student")
-//    private List<Board> boards = new ArrayList<>();
+    @OneToOne(mappedBy = "student", fetch = LAZY)
+    private Reservation reservation;
+
+    @OneToMany(mappedBy = "student")
+    private List<Board> boards = new ArrayList<>();
 
   /*  public static Student toStudent(StudentDto studentDto){
         Student student = new Student();

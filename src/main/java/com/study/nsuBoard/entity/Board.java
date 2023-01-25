@@ -22,12 +22,16 @@ public class Board {
     @Column(name = "board_id")
     private Integer id;
 
+    @Column
     private String title;
 
+    @Column
     private String content;
 
+    @Column
     private String filename;
 
+    @Column
     private String filepath;
 
     @ManyToOne(fetch = LAZY)

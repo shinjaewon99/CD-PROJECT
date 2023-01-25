@@ -1,5 +1,6 @@
 package com.study.nsuBoard.repository;
 
+import com.study.nsuBoard.entity.Board;
 import com.study.nsuBoard.entity.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -17,7 +18,9 @@ public class StudentRepository {
 
     public void save(Student student) {
         em.persist(student);
+
     }
+
 
     public Student findOne(Long id) {
         return em.find(Student.class, id);

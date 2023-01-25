@@ -1,24 +1,30 @@
 package com.study.nsuBoard.service;
 
 
+import com.study.nsuBoard.Form.StudentForm;
 import com.study.nsuBoard.entity.Board;
+import com.study.nsuBoard.entity.Student;
 import com.study.nsuBoard.repository.BoardRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.persistence.EntityManager;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class BoardService {
 
     @Autowired
     private BoardRepository boardRepository;
+    private EntityManager em;
 
     // 글 작성 처리
     public void write(Board board, MultipartFile file) throws Exception{

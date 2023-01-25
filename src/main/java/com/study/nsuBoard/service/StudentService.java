@@ -40,7 +40,7 @@ public class StudentService {
                 return null;
             }
         }
-        studentRepository.save(student);
+
         return student.getStudent();
     }
 

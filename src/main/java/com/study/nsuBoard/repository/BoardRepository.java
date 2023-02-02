@@ -25,8 +25,6 @@ public class BoardRepository{
 }*/
 
 
-
-
 package com.study.nsuBoard.repository;
 
 

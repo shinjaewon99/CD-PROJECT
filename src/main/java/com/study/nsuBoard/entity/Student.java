@@ -1,7 +1,6 @@
 package com.study.nsuBoard.entity;
 
 
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +8,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.FetchType.*;
+import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Getter
@@ -38,6 +37,12 @@ public class Student {
 
     @OneToMany(mappedBy = "student")
     private List<Board> boards = new ArrayList<>();
+
+    public void addBoard(Board board) {
+        boards.add(board);
+        board.setStudent(this);
+    }
+
 
   /*  public static Student toStudent(StudentDto studentDto){
         Student student = new Student();

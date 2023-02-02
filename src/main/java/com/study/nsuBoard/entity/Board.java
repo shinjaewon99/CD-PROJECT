@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static javax.persistence.FetchType.*;
+import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Data
@@ -40,5 +40,10 @@ public class Board {
 
     @OneToMany(mappedBy = "board", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Comment> commentList = new ArrayList<>();
+
+    public void addComment(Comment comment) {
+        commentList.add(comment);
+        comment.setBoard(this);
+    }
 
 }

@@ -34,7 +34,7 @@ public class ReservationController {
     }
 
     @GetMapping("/nusBoard/list")
-    public String list(Model model){
+    public String list(Model model) {
         List<Reservation> reservationList = reservationService.findAllReservation();
         model.addAttribute("reservationList", reservationList);
         return "ClassRoom/reservationList";

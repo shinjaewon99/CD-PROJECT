@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -22,7 +21,6 @@ import javax.servlet.http.HttpSession;
 public class StudentController {
 
     private final StudentService studentService;
-    // 회원가입 기능 구현
 
     @GetMapping("/save")
     public String saveForm(Model model) {
@@ -51,9 +49,6 @@ public class StudentController {
     public String loginForm(Model model) {
         studentService.login();
 
-
-//        model.addAttribute("message", "로그인이 완료되었습니다.");
-//        model.addAttribute("searchUrl", "/MainPage/chooseBoardOrReservation");
         return "MainPage/chooseBoardOrReservation";
     }
 

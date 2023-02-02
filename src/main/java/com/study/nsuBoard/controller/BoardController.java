@@ -26,11 +26,12 @@ public class BoardController {
     private BoardService boardService;
 
 
-    @GetMapping("/write") //localhost:8090/board/write
+    @GetMapping("/write")
     public String boardWriteForm() {
 
         return "Board/boardwrite";
     }
+
     @GetMapping("/nsuBoard/Board")
     public String board() {
         return "redirect:/board/list";
@@ -80,15 +81,15 @@ public class BoardController {
         return "Board/boardview";
     }
 
-    // 게시글 수정
     @GetMapping("/modify/{id}")
-    public String boardModify(@PathVariable("id") Integer id, Model model){
+    public String boardModify(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("board", boardService.boardView(id));
 
         return "Board/boardmodify";
     }
+
     @PostMapping("/update/{id}")
-    public String boardUpdate(@PathVariable("id") Integer id, Board board, Model model){
+    public String boardUpdate(@PathVariable("id") Integer id, Board board, Model model) {
 
         Board boardTemp = boardService.boardView(id);
         boardTemp.setTitle(board.getTitle());
@@ -101,7 +102,6 @@ public class BoardController {
 
     }
 
-    // 글 삭제
 
     @GetMapping("/delete")
     public String boardDelete(Integer id, Model model) {

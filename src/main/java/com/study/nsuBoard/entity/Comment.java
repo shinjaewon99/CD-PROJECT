@@ -1,15 +1,12 @@
 package com.study.nsuBoard.entity;
 
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-import java.time.LocalDateTime;
-
-import static javax.persistence.FetchType.*;
+import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Getter

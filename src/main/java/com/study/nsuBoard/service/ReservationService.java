@@ -1,17 +1,14 @@
 package com.study.nsuBoard.service;
 
-import com.study.nsuBoard.dto.ReservationDto;
-import com.study.nsuBoard.entity.Board;
 import com.study.nsuBoard.entity.ClassRoom;
 import com.study.nsuBoard.entity.Reservation;
 import com.study.nsuBoard.repository.ClassRoomRepository;
 import com.study.nsuBoard.repository.ReservationRepository;
-import com.study.nsuBoard.timeutil.time;
+import com.study.nsuBoard.status.ReservationStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,18 +21,18 @@ public class ReservationService {
     private final ReservationRepository reservationRepository;
 
 
-
     public List<ClassRoom> findAll() {
         Optional<List<ClassRoom>> result = classRoomRepository.findAll();
 
         return result.get();
     }
 
-    public List<Reservation> findAllReservation(){
+    public List<Reservation> findAllReservation() {
         return reservationRepository.findAll();
     }
 
-    public Long reservation(Reservation reservation){
+    public Long reservation(Reservation reservation) {
+        reservation.setStatus(ReservationStatus.OK_RESERVATION);
         reservationRepository.save(reservation);
         return reservation.getId();
     }

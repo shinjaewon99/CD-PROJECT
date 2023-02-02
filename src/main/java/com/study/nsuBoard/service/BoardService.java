@@ -5,6 +5,7 @@ import com.study.nsuBoard.Form.StudentForm;
 import com.study.nsuBoard.entity.Board;
 import com.study.nsuBoard.entity.Student;
 import com.study.nsuBoard.repository.BoardRepository;
+import com.study.nsuBoard.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,7 +25,7 @@ public class BoardService {
 
     @Autowired
     private BoardRepository boardRepository;
-    private EntityManager em;
+    private StudentRepository studentRepository;
 
     // 글 작성 처리
     public void write(Board board, MultipartFile file) throws Exception{
@@ -42,10 +43,10 @@ public class BoardService {
         board.setFilename(fileName);
         board.setFilepath("/files/" + fileName);
 
-        boardRepository.save(board);
+        boardRepository.save(board).getStudent();
     }
     public void write(Board board){
-        boardRepository.save(board);
+        boardRepository.save(board).getStudent();
     }
 
     // 게시글 리스트 처리

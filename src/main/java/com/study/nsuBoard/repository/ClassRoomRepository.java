@@ -13,6 +13,10 @@ import java.util.Optional;
 public class ClassRoomRepository {
     private final EntityManager em;
 
+    public void save(ClassRoom classRoom) {
+        em.persist(classRoom.getNumber());
+    }
+
     public Optional<List<ClassRoom>> findAll() {
         List<ClassRoom> result = em.createQuery("SELECT c FROM ClassRoom c", ClassRoom.class)
                 .getResultList();

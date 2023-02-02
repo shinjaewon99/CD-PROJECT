@@ -2,9 +2,12 @@ package com.study.nsuBoard.controller;
 
 
 
+import com.study.nsuBoard.entity.ClassRoom;
+import com.study.nsuBoard.service.ClassRoomService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 @RequestMapping("/nsuBoard")
 public class ChooseController {
+    private final ClassRoomService classRoomService;
 
     @GetMapping("/chooseBoardOrReservation")
     public String chooseForm() {
@@ -45,22 +49,14 @@ public class ChooseController {
     }
 
     @GetMapping("/classroom1")
-    public String classroom1() {
+    public String classroom1Form() {
         return "ClassRoom/seatNumber";
     }
-
-
-
-
-  /* @PostMapping("/seat1")
-    public String setSeat1(@ModelAttribute SeatDto seatDto, Model model){
-
-        reservationService.reservationSave(seatDto);
-        System.out.println(seatDto);
-
-    }*/
-
-
+    @PostMapping("/classroom1")
+    public String classroom1(ClassRoom classRoom){
+        classRoomService.join(classRoom);
+        return "ClassRoom/seatNumber";
+    }
 
 }
 

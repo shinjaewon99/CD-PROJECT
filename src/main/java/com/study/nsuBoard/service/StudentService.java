@@ -29,8 +29,6 @@ public class StudentService {
         }
     }
 
-
-    // 로그인
     public String login() {
         Student student = new Student();
         List<Student> findStudents = studentRepository.findByStudentId(student.getStudent());

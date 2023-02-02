@@ -1,6 +1,5 @@
 package com.study.nsuBoard.repository;
 
-import com.study.nsuBoard.entity.Board;
 import com.study.nsuBoard.entity.Student;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

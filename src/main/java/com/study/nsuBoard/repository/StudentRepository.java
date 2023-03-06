@@ -29,7 +29,6 @@ public class StudentRepository {
         return em.createQuery("select s from Student s where s.student = :student", Student.class)
                 .setParameter("student", student)
                 .getResultList();
-
     }
 
 

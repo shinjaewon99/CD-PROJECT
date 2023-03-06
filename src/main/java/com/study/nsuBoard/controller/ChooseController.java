@@ -35,17 +35,29 @@ public class ChooseController {
 
     @GetMapping("/1")
     public String number1() {
-        return "Floor/choice";
+        return "Floor/choice1";
     }
 
     @GetMapping("/2")
     public String number2() {
-        return "Floor/choice";
+        return "Floor/choice2";
     }
 
     @GetMapping("/2th floor")
     public String floor2() {
-        return "ClassRoom/classRoom";
+        return "ClassRoom/classRoom_2F";
+    }
+    @GetMapping("/3th floor")
+    public String floor3() {
+        return "ClassRoom/classRoom_3F";
+    }
+    @GetMapping("/4th floor")
+    public String floor4() {
+        return "ClassRoom/classRoom_4F";
+    }
+    @GetMapping("/5th floor")
+    public String floor5() {
+        return "ClassRoom/classRoom_5F";
     }
 
     @GetMapping("/classroom1")

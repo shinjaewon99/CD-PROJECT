@@ -1,0 +1,183 @@
+*{
+    
+    font-family: 'Inter';
+    font-style: normal;
+    list-style: none;
+    text-decoration: none;
+    color:#000000
+}
+.div01{
+    background-color: rgba(176, 196, 222, 0.5);
+    margin: 0px;
+    width: auto;
+    height: 100px;
+    display: flex;
+}
+.div02{
+    content: "";
+    position: absolute;
+    top: 10.7%;
+    left: 200px;
+    display: block;
+    width: 1px;
+    height: 89.3%;
+    background: #000000;
+}
+#로고{
+    position: absolute;
+    width: 100px;
+    height: 88px;
+    left: 55px;
+    top: 1%;
+}
+#게시판{
+    position: absolute;
+    width: 129px;
+    height: 54px;
+    left: 283px;
+    top: 2%;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#강의실예약{
+    position: absolute;
+    width: 164px;
+    height: 54px;
+    left: 473px;
+    top: 2%;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#로그아웃{
+    position: absolute;
+    width: 168px;
+    height: 52px;
+    left: 1236px;
+    top: 3%;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    align-items: center;
+    text-align: center;
+}
+#프로필사진{
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 65px;
+    top: 13%;
+}
+#이름{
+    position: absolute;
+    width: 166px;
+    height: 57px;
+    left: 20px;
+    top: 25%;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+}
+#학과{
+    position: absolute;
+    width: 207px;
+    height: 58px;
+    left: 0px;
+    top: 30%;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+}
+.목록{
+    display: flex;
+    position: absolute;
+    margin-top: 0px;
+    font-size: 25px;
+    left: 210px;
+    top: 245px;
+}
+.목록 > li{
+    margin-left: 100px;
+    padding: 10px;
+}
+.div03{
+    position: absolute;
+    width: 962px;
+    height: 0px;
+    left: 294px;
+    top: 309.51px;
+    border: 1px solid #000000;
+}
+#제목검색{
+    position: absolute;
+    width: 225px;
+    height: 31px;
+    left: 294px;
+    top: 370px;
+}
+#검색버튼{
+    position: absolute;
+    width: 59px;
+    height: 30px;
+    left: 548px;
+    top: 373px;
+}
+#글작성버튼{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    left: 1149px;
+    top: 373px;
+}
+.글목록{
+    position: absolute;
+    margin-top: 0px;
+    left: 294px;
+    top: 453px;
+}
+table{
+    border-collapse: collapse;
+}
+caption{
+    display: none;
+}
+.board_list{
+    width: 1000px;
+}
+.board_list tr{
+    border-bottom: 1px;
+}
+.board_list th,
+.board_list td{
+    padding: 10px;
+}
+.board_list td{
+    text-align: center;
+}
+.board_list .tit {
+    text-align: left;
+}
+.board_list .tit :hover{
+    text-decoration: underline;
+}
+.글목록 .paging{
+    margin-top: 30px;
+    text-align: center;
+}
+.글목록 .paging a{
+    margin-left: 20px;
+}
+.글목록 .paging a.num.on{
+    font-weight: 600;
+}

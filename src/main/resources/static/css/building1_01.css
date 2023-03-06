@@ -1,0 +1,157 @@
+*{
+    
+    font-family: 'Inter';
+    font-style: normal;
+    list-style: none;
+    text-decoration: none;
+    color:#000000
+}
+.div01{
+    background-color: rgba(176, 196, 222, 0.5);
+    margin: 0px;
+    width: auto;
+    height: 100px;
+    display: flex;
+}
+.div02{
+    content: "";
+    position: absolute;
+    top: 10.7%;
+    left: 200px;
+    display: block;
+    width: 1px;
+    height: 89.3%;
+    background: #000000;
+}
+#로고{
+    position: absolute;
+    width: 100px;
+    height: 88px;
+    left: 55px;
+    top: 1%;
+}
+#게시판{
+    position: absolute;
+    width: 129px;
+    height: 54px;
+    left: 283px;
+    top: 2%;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#강의실예약{
+    position: absolute;
+    width: 164px;
+    height: 54px;
+    left: 473px;
+    top: 2%;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+#로그아웃{
+    position: absolute;
+    width: 168px;
+    height: 52px;
+    left: 1236px;
+    top: 3%;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    align-items: center;
+    text-align: center;
+}
+#프로필사진{
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 65px;
+    top: 13%;
+}
+#이름{
+    position: absolute;
+    width: 166px;
+    height: 57px;
+    left: 20px;
+    top: 25%;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+}
+#학과{
+    position: absolute;
+    width: 207px;
+    height: 58px;
+    left: 0px;
+    top: 30%;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+}
+#공학1관{
+    position: absolute;
+    left: 760px;
+    top: 170px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
+    font-size: 30px
+}
+#오층{
+    position: absolute;
+    padding: 30px 400px;
+    left: 402px;
+    top: 300px;
+    font-size: 23px;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000000;
+    display: inline-block;
+    background-color: rgba(176, 196, 222, 0.5);
+}
+#사층{
+    position: absolute;
+    padding: 30px 400px;
+    left: 402px;
+    top: 420px;
+    font-size: 23px;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000000;
+    display: inline-block;
+    background-color: rgba(176, 196, 222, 0.5);
+}
+#삼층{
+    position: absolute;
+    padding: 30px 400px;
+    left: 402px;
+    top: 540px;
+    font-size: 23px;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000000;
+    display: inline-block;
+    background-color: rgba(176, 196, 222, 0.5);
+}
+#이층{
+    position: absolute;
+    padding: 30px 400px;
+    left: 402px;
+    top: 660px;
+    font-size: 23px;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #000000;
+    display: inline-block;
+    background-color: rgba(176, 196, 222, 0.5);
+}

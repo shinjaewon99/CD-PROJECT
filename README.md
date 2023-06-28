@@ -5,7 +5,7 @@
 게시판에 글을 작성해 등록과 글 검색 가능, 작성된 게시글에 댓글 작성 가능
 
 # 백엔드
-## Spring boot, Spring Dat Jpa
+## Spring boot
 
 # 프론트 엔드
 ## html, css, thymeleaf

@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>게시글 리스트 페이지</title>
+    <meta charset="utf-8">
+    <title>메인페이지</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link href="/css/Writingpagelist%20.css" rel="stylesheet">
 </head>
 
-<style>
-
-    .layout {
-        width : 500px;
-        margin : 0 auto;
-        margin-top : 40px;
-    }
-
-</style>
-
 <body>
-
-<div class="layout">
-
-    <table>
-        <thead>
-        <tr>
-            <th>글번호</th>
-            <th>제목</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="board : ${list}">
-            <td th:text="${board.id}">1</td>
-            <td>
-                <a th:text="${board.title}" th:href="@{/board/view(id=${board.id})}"></a>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
-    <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
-        <a th:if="${page != nowPage}" th:href="@{/board/list(page = ${page - 1}, searchKeyword = ${param.searchKeyword})}" th:text="${page}"></a>
-        <strong th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
-    </th:block>
-    <form th:action="@{/board/list}" method="get">
-        <input type="text" name="searchKeyword">
-        <button type="submit">검색</button>
+<body topmargin="0"  leftmargin="0" marginwidth="1" marginheight="0"></body>
+<div>
+    <a href="Mainpage.html"></a>
+    <img id="로고" src="/nsulogo.png" alt="로고">
+    <a id="게시판" href="/nsuBoard/Board">게시판</a>
+    <a id="강의실예약" href="/nsuBoard/Reservation">강의실 예약</a>
+    <form action="/" method="post">
+        <input id="로그아웃" type="submit" value="logout" name="logout"/>
     </form>
-    <a href="/board/write">글작성</a>
 </div>
+<img id="프로필사진" src="/profile.png" alt="프로필사진" width="80" height="86"/>
+<span id="이름">신재원</span>
+<span id="학과">컴퓨터 학과</span>
+<div class="div02"></div>
+<ul class="목록">
+
+    <div class="layout">
+
+        <table>
+            <thead>
+            <tr>
+                <th>글번호</th>
+                <th>제목</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="boardEntity : ${list}">
+                <td th:text="${boardEntity.id}">1</td>
+                <td>
+                    <a th:text="${boardEntity.title}" th:href="@{/boardEntity/view(id=${boardEntity.id})}"></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <th:block th:each="page : ${#numbers.sequence(startPage, endPage)}">
+            <a th:if="${page != nowPage}" th:href="@{/boardEntity/list(page = ${page - 1}, searchKeyword = ${param.searchKeyword})}" th:text="${page}"></a>
+            <strong th:if="${page == nowPage}" th:text="${page}" style="color : red"></strong>
+        </th:block>
+
+        <form th:action="@{/boardEntity/list}" method="get">
+            <input type="text" name="searchKeyword">
+            <button type="submit">검색</button>
+
+        </form>
+        <a href="/boardEntity/write">글작성</a>
+    </div>
+
 
 </body>
 </html>
+

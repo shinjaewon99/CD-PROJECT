@@ -1,35 +1,26 @@
 *{
-    height: 100%;
+    
     font-family: 'Inter';
     font-style: normal;
     list-style: none;
     text-decoration: none;
     color:#000000
 }
-div{
+.div01{
     background-color: rgba(176, 196, 222, 0.5);
     margin: 0px;
     width: auto;
     height: 100px;
     display: flex;
 }
-.div01{
-    content: "";
-    position: absolute;
-    top: 11.6%;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background: #000000;
-}
 .div02{
     content: "";
     position: absolute;
-    top: 11.6%;
+    top: 10.7%;
     left: 200px;
     display: block;
     width: 1px;
-    height: 88.4%;
+    height: 89.3%;
     background: #000000;
 }
 #로고{
@@ -69,7 +60,7 @@ div{
     position: absolute;
     width: 168px;
     height: 52px;
-    left: 90%;
+    left: 1236px;
     top: 3%;
     font-weight: 400;
     font-size: 30px;
@@ -123,7 +114,7 @@ div{
     align-items:center;
     min-height: 100vh;
 
-}
+  }
 iframe {
     border: 1px solid black;
     width: 1097px;
@@ -131,3 +122,23 @@ iframe {
     left: 285px;
     top: 233px;
 }
+#뒤로{
+
+
+    position: absolute;
+    width: 91px;
+    height: 75px;
+    left: 285px;
+    top: 133px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+

@@ -1,11 +1,8 @@
 package com.study.nsuBoard.service;
 
 
-import com.study.nsuBoard.Form.StudentForm;
-import com.study.nsuBoard.entity.Board;
-import com.study.nsuBoard.entity.Student;
+import com.study.nsuBoard.entity.BoardEntity;
 import com.study.nsuBoard.repository.BoardRepository;
-import com.study.nsuBoard.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -13,10 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.EntityManager;
 import java.io.File;
-import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -25,10 +19,9 @@ public class BoardService {
 
     @Autowired
     private BoardRepository boardRepository;
-    private StudentRepository studentRepository;
 
     // 글 작성 처리
-    public void write(Board board, MultipartFile file) throws Exception{
+    public void write(BoardEntity boardEntity, MultipartFile file) throws Exception {
 
         String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
 
@@ -40,39 +33,36 @@ public class BoardService {
 
         file.transferTo(saveFile);
 
-        board.setFilename(fileName);
-        board.setFilepath("/files/" + fileName);
+        boardEntity.setFilename(fileName);
+        boardEntity.setFilepath("/files/" + fileName);
 
-        boardRepository.save(board).getStudent();
+        boardRepository.save(boardEntity).getStudentEntity();
     }
-    public void write(Board board){
-        boardRepository.save(board).getStudent();
+
+    public void write(BoardEntity boardEntity) {
+        boardRepository.save(boardEntity).getStudentEntity();
     }
 
     // 게시글 리스트 처리
-    public Page<Board> boardList(Pageable pageable) {
+    public Page<BoardEntity> boardList(Pageable pageable) {
 
         return boardRepository.findAll(pageable);
     }
 
     // 게시글 검색 처리
-    public Page<Board> boardSearchList(String searchKeyword, Pageable pageable) {
+    public Page<BoardEntity> boardSearchList(String searchKeyword, Pageable pageable) {
 
         return boardRepository.findByTitleContaining(searchKeyword, pageable);
     }
 
-/*    public List<Board> searchBoard(BoardSerach boardSerach){
-        return boardRepository.findAll()
-    }*/
-
     // 특정 게시글 불러오기
-    public Board boardView(Integer id) {
+    public BoardEntity boardView(Integer id) {
 
         return boardRepository.findById(id).get();
     }
 
     // 특정 게시글 삭제
-    public void boardDelete(Integer id){
+    public void boardDelete(Integer id) {
         boardRepository.deleteById(id);
     }
 }

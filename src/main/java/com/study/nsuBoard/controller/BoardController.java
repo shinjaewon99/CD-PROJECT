@@ -1,8 +1,9 @@
 package com.study.nsuBoard.controller;
 
 
-import com.study.nsuBoard.entity.Board;
+import com.study.nsuBoard.entity.BoardEntity;
 import com.study.nsuBoard.service.BoardService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,14 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 
-@Controller
+@Controller // HTTP 요청을 받아서 응답을 하는 어노테이션
 @RequestMapping("/board")
+@RequiredArgsConstructor
 public class BoardController {
-
-
-    @Autowired
-    private BoardService boardService;
-
+    private final BoardService boardService;
 
     @GetMapping("/write")
     public String boardWriteForm() {
@@ -39,9 +37,9 @@ public class BoardController {
 
 
     @PostMapping("/writepro")
-    public String boardWritePro(Board board, Model model, MultipartFile file) throws Exception {
+    public String boardWritePro(BoardEntity boardEntity, Model model, MultipartFile file) throws Exception {
 
-        boardService.write(board, file);
+        boardService.write(boardEntity, file);
 
         model.addAttribute("message", "글 작성이 완료되었습니다.");
         model.addAttribute("searchUrl", "/board/list");
@@ -54,7 +52,7 @@ public class BoardController {
                             @PageableDefault(page = 0, size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
                             String searchKeyword) {
 
-        Page<Board> list = null;
+        Page<BoardEntity> list = null;
 
         if (searchKeyword == null) {
             list = boardService.boardList(pageable);
@@ -89,13 +87,13 @@ public class BoardController {
     }
 
     @PostMapping("/update/{id}")
-    public String boardUpdate(@PathVariable("id") Integer id, Board board, Model model) {
+    public String boardUpdate(@PathVariable("id") Integer id, BoardEntity boardEntity, Model model) {
 
-        Board boardTemp = boardService.boardView(id);
-        boardTemp.setTitle(board.getTitle());
-        boardTemp.setContent(board.getContent());
+        BoardEntity boardEntityTemp = boardService.boardView(id);
+        boardEntityTemp.setTitle(boardEntity.getTitle());
+        boardEntityTemp.setContent(boardEntity.getContent());
 
-        boardService.write(boardTemp);
+        boardService.write(boardEntityTemp);
         model.addAttribute("message", "글 수정이 완료되었습니다.");
         model.addAttribute("searchUrl", "/board/list");
         return "Board/message";

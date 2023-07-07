@@ -12,7 +12,6 @@ public class StudentForm {
 
     @NotEmpty(message = "학번은 필수 입니다")
     private String student;
-
     private String passWord;
     private String nickName;
     private String department;

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/building_seat.css" rel="stylesheet">
+    <title>공학 1관 </title>
+</head>
+<body>
+<body topmargin="0"  leftmargin="0" marginwidth="1" marginheight="0"></body>
+<div class="div01">
+    <a href="Mainpage.html">
+        <img id="로고" src="/nsulogo.png" alt="로고">
+        <a id="게시판" href="/nsuBoard/Board">게시판</a>
+        <a id="강의실예약" href="/nsuBoard/Reservation">강의실 예약</a>
+        <form action="/static" method="post">
+            <input id="로그아웃" type="submit" value="logout" name="logout"/>
+        </form>
+</div>
+
+<img id="프로필사진" src="/profile.png" alt="프로필사진" width="80" height="86"/>
+<span id="이름">신재원</span>
+<span id="학과">컴퓨터 학과</span>
+
+<span id="교실명">R201</span>
+<div class="수업명">
+    <select name="수업명">
+        <option value="캡스톤디자인">캡스톤디자인</option>
+        <option value="인공지능">인공지능</option>
+        <option value="정보보안기술">정보보안기술</option>
+    </select>
+</div>
+<div class="수업시간">
+    <select name="수업시간">
+        <option value="오전">오전</option>
+        <option value="오후">오후</option>
+    </select>
+</div>
+<span id="칠판">칠판</span>
+<ul class="좌석1_6">
+    <li><a id="좌석1" href="/nsuBoard/seat1">01</a></li>
+    <li><a id="좌석2" href="/nsuBoard/seat2">02</a></li>
+    <li><a id="좌석3" href="#">03</a></li>
+    <li><a id="좌석4" href="#">04</a></li>
+    <li><a id="좌석5" href="#">05</a></li>
+    <li><a id="좌석6" href="#">06</a></li>
+</ul>
+<ul class="좌석7_12">
+    <li><a id="좌석1" href="#">07</a></li>
+    <li><a id="좌석2" href="#">08</a></li>
+    <li><a id="좌석3" href="#">09</a></li>
+    <li><a id="좌석4" href="#">10</a></li>
+    <li><a id="좌석5" href="#">11</a></li>
+    <li><a id="좌석6" href="#">12</a></li>
+</ul>
+<ul class="좌석13_18">
+    <li><a id="좌석1" href="#">13</a></li>
+    <li><a id="좌석2" href="#">14</a></li>
+    <li><a id="좌석3" href="#">15</a></li>
+    <li><a id="좌석4" href="#">16</a></li>
+    <li><a id="좌석5" href="#">17</a></li>
+    <li><a id="좌석6" href="#">18</a></li>
+</ul>
+<ul class="좌석19_24">
+    <li><a id="좌석1" href="#">19</a></li>
+    <li><a id="좌석2" href="#">20</a></li>
+    <li><a id="좌석3" href="#">21</a></li>
+    <li><a id="좌석4" href="#">22</a></li>
+    <li><a id="좌석5" href="#">23</a></li>
+    <li><a id="좌석6" class="btn btn-lg btn-secondary" href="/nusBoard/list">예약 목록</a></li>
+
+</ul>
+</body>
+</html>

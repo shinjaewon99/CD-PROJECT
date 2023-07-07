@@ -1,7 +1,9 @@
 package com.study.nsuBoard.entity;
 
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,15 +13,27 @@ import static javax.persistence.FetchType.LAZY;
 
 
 @Getter
+@Setter
+@Builder
 @Entity
-@NoArgsConstructor(access = AccessLevel.PROTECTED) // 무분별한 생성자 생성 방지 private 접근자로 하게되면 Spring에서도 접근을 못하게됨
 public class StudentEntity {
-
     @Id
-    private String studentId; // 학번
-    private String studentPassword;
-    private String studentNickName;
-    private String studentDepartment; // 학과
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "student_id")
+    private Long id;
+
+
+    @Column
+    private String student;
+
+    @Column
+    private String Password;
+
+    @Column
+    private String nickName;
+
+    @Column
+    private String department;
 
     @OneToOne(mappedBy = "student", fetch = LAZY)
     private Reservation reservation;
@@ -27,4 +41,7 @@ public class StudentEntity {
     @OneToMany(mappedBy = "student")
     private List<BoardEntity> boardEntities = new ArrayList<>();
 
+    public StudentEntity() {
+
+    }
 }

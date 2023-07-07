@@ -9,6 +9,9 @@ public class ReservationForm {
 
     private String seatNumber;
 
+
+    private String day;
+    private String am_pm;
     private String hour;
     private String minute;
 

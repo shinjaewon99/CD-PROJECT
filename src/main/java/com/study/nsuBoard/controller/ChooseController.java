@@ -1,7 +1,6 @@
 package com.study.nsuBoard.controller;
 
 
-
 import com.study.nsuBoard.entity.ClassRoom;
 import com.study.nsuBoard.service.ClassRoomService;
 import lombok.RequiredArgsConstructor;
@@ -47,29 +46,47 @@ public class ChooseController {
     public String floor2() {
         return "ClassRoom/classRoom_2F";
     }
+
     @GetMapping("/3th floor")
     public String floor3() {
         return "ClassRoom/classRoom_3F";
     }
+
     @GetMapping("/4th floor")
     public String floor4() {
         return "ClassRoom/classRoom_4F";
     }
+
     @GetMapping("/5th floor")
     public String floor5() {
         return "ClassRoom/classRoom_5F";
     }
 
-    @GetMapping("/classroom1")
+    @GetMapping("/2Fclassroom1")
     public String classroom1Form() {
-        return "ClassRoom/seatNumber";
-    }
-    @PostMapping("/classroom1")
-    public String classroom1(ClassRoom classRoom){
-        classRoomService.join(classRoom);
-        return "ClassRoom/seatNumber";
+        return "ClassRoom/buildingL/buildingL201";
     }
 
+    @PostMapping("/2Fclassroom1")
+    public String classroom1(ClassRoom classRoom) {
+        classRoomService.join(classRoom);
+        return "ClassRoom/buildingL/buildingL201";
+    }
+
+    @GetMapping("/3Fclassroom1")
+    public String f3classroom1Form() {
+        return "ClassRoom/buildingL/buildingL301";
+    }
+
+    @GetMapping("/4Fclassroom1")
+    public String f4classroom1Form() {
+        return "ClassRoom/buildingL/buildingL401";
+    }
+
+    @GetMapping("/5Fclassroom1")
+    public String f5classroom1Form() {
+        return "ClassRoom/buildingL/buildingL501";
+    }
 }
 
 

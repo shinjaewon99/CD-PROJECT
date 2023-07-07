@@ -45,6 +45,8 @@ public class ReservationController {
     public String reservationTimeMinute(@Validated ReservationForm form, Model model) {
         Reservation reservation = new Reservation();
         reservation.setSeatNumber(form.getSeatNumber());
+        reservation.setAm_pm(form.getAm_pm());
+        reservation.setDay(form.getDay());
         reservation.setHour(form.getHour());
         reservation.setMinute(form.getMinute());
 
@@ -52,7 +54,7 @@ public class ReservationController {
         System.out.println("ReservationController.reservationTimeMinute");
 
         model.addAttribute("message", "예약이 완료되었습니다.");
-        model.addAttribute("searchUrl", "classroom1");
+        model.addAttribute("searchUrl", "2Fclassroom1");
 
 
         return "Board/message";

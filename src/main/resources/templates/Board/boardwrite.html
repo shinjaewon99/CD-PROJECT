@@ -1,39 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>게시물 작성폼</title>
+    <meta charset="utf-8">
+    <title>게시글 작성</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link href="/css/Writingpage.css" rel="stylesheet">
 </head>
-
-<style>
-
-    .layout {
-        width : 500px;
-        margin : 0 auto;
-        margin-top : 40px;
-    }
-
-    .layout input {
-        width : 100%;
-        box-sizing : border-box
-    }
-
-    .layout textarea {
-        width : 100%;
-        margin-top : 10px;
-        min-height : 300px;
-    }
-
-</style>
-
 <body>
-<div class="layout">
-    <form action="/board/writepro" method="post" enctype="multipart/form-data">
-        <input name="title" type="text">
-        <textarea name="content"></textarea>
-        <input type="file" name="file">
-        <button type="submit">작성</button>
+<body topmargin="0"  leftmargin="0" marginwidth="1" marginheight="0"></body>
+<div class="div01">
+    <a href="Mainpage.html"></a>
+    <img id="로고" src="/nsulogo.png" alt="로고">
+    <a id="게시판" href="/nsuBoard/Board">게시판</a>
+    <a id="강의실예약" href="/nsuBoard/Reservation">강의실 예약</a>
+    <form action="/" method="post">
+        <input id="로그아웃" type="submit" value="logout" name="logout"/>
+    </form>
+</div>
+
+<img id="프로필사진" src="/profile.png" alt="프로필사진" width="80" height="86"/>
+<span id="이름">신재원</span>
+<span id="학과">컴퓨터 학과</span>
+<div class="div02"></div>
+
+<span id="게시글작성">게시글 작성</span>
+<div class="line03"></div>
+<body>
+
+
+<div>
+    <form action="/boardEntity/writepro" method="post" enctype="multipart/form-data">
+        <input id="제목입력" class="말머리선택" name="title" type="text" placeholder="제목을 입력해 주세요.">
+
+        <textarea id="내용작성" name="content" cols="100" rows="15" placeholder="내용을 입력해 주세요."></textarea>
+        <input id="파일선택" type="file" name="file">
+        <button type="submit" class="작성버튼">작성</button>
     </form>
 </div>
 </body>
 </html>
+
+
+

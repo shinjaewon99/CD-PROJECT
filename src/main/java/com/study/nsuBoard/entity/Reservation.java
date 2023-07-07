@@ -23,6 +23,11 @@ public class Reservation {
 
 
     @Column
+    private String day;
+
+    @Column
+    private String am_pm;
+    @Column
     private String hour;
 
     @Column
@@ -30,7 +35,7 @@ public class Reservation {
 
     @OneToOne(fetch = LAZY)
     @JoinColumn(name = "student_id")
-    private Student student;
+    private StudentEntity studentEntity;
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "classroom_id")
@@ -40,17 +45,5 @@ public class Reservation {
     @Enumerated(EnumType.STRING)
     private ReservationStatus status;
 
-
-//    public static Reservation createReservation(Long id,
-//                                                LocalDateTime startDate,
-//                                                String seatNumber,
-//                                                LocalDateTime endDate) {
-//        Reservation reservation = new Reservation();
-//        reservation.setId(id);
-//        reservation.setSeatNumber(seatNumber);
-//        reservation.setStartDate(startDate);
-//        reservation.setEndDate(endDate);
-//        return reservation;
-//    }
 
 }

@@ -32,28 +32,8 @@ public class ReservationService {
     }
 
     public Long reservation(Reservation reservation) {
-        reservation.setStatus(ReservationStatus.OK_RESERVATION);
+        reservation.setStatus(ReservationStatus.RESERVATION_OK);
         reservationRepository.save(reservation);
         return reservation.getId();
     }
-
-
-  /*  public void reservation(Long classroomId,
-                            String setNumber,
-                            ReservationDto formDto) {
-
-        Optional<ClassRoom> optionalClassroom = classRoomRepository.findBydClassRoomId(classroomId);
-
-        LocalDateTime startDate = time.getLocalDateTime(formDto.getStartDate(), formDto.getStartHour(), formDto.getStartMinute());
-
-
-        LocalDateTime endDate = time.getLocalDateTime(formDto.getEndDate(), formDto.getEndHour(), formDto.getEndMinute());
-
-
-        Reservation reservation = Reservation.createReservation(optionalClassroom.get().getId(), startDate, setNumber, endDate);
-
-
-        reservationRepository.save(reservation);
-
-    }*/
 }

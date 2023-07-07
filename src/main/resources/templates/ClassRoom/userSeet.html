@@ -1,13 +1,49 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
-  <title>HTML</title>
+  <title>게시글 작성</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link href="/css/classreservation.css" rel="stylesheet">
 </head>
 <body>
+<body topmargin="0"  leftmargin="0" marginwidth="1" marginheight="0"></body>
+<div class="div01">
+  <a href="Mainpage.html"></a>
+  <img id="로고" src="/nsulogo.png" alt="로고">
+  <a id="게시판" href="/nsuBoard/Board">게시판</a>
+  <a id="강의실예약" href="/nsuBoard/Reservation">강의실 예약</a>
+  <form action="/" method="post">
+    <input id="로그아웃" type="submit" value="logout" name="logout"/>
+  </form>
+</div>
+
+<img id="프로필사진" src="/profile.png" alt="프로필사진" width="80" height="86"/>
+<span id="이름">신재원</span>
+<span id="학과">컴퓨터 학과</span>
+<div class="div02"></div>
+
 <div class="container">
 
   <form role="form" action="/nsuBoard/reservation" th:object="${ReservationForm}" method="post">
+
+
+
+    <tr>
+      <th>예약 일정</th>
+    </tr>
+    <div class="form-group">
+      <label th:for="hour">오전/오후</label>
+      <input type="text" th:field="*{am_pm}" class="form-control"
+             placeholder="am_pm">
+    </div>
+
+    <div class="form-group">
+      <label th:for="hour">일</label>
+      <input type="text" th:field="*{day}" class="form-control"
+             placeholder="day">
+    </div>
 
     <div class="form-group">
       <label th:for="hour">시간</label>

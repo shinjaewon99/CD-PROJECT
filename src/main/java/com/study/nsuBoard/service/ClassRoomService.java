@@ -13,7 +13,7 @@ public class ClassRoomService {
 
     private ClassRoomRepository classRoomRepository;
 
-    public String join(ClassRoom classRoom){
+    public String join(ClassRoom classRoom) {
         classRoomRepository.save(classRoom);
         return classRoom.getNumber();
     }

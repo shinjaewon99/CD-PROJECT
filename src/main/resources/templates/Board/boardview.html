@@ -7,19 +7,19 @@
 </head>
 <body>
 
-<h1 th:text="${board.title}">제목입니다.</h1>
-<p th:text="${board.content}">내용이 들어갈 부분입니다.</p>
-<a th:href="@{/board/delete(id=${board.id})}">글삭제</a>
-<a th:href="@{/board/modify/{id}(id = ${board.id})}">수정</a>
+<h1 th:text="${boardEntity.title}">제목입니다.</h1>
+<p th:text="${boardEntity.content}">내용이 들어갈 부분입니다.</p>
+<a th:href="@{/boardEntity/delete(id=${boardEntity.id})}">글삭제</a>
+<a th:href="@{/boardEntity/modify/{id}(id = ${boardEntity.id})}">수정</a>
 
-<div id="comment-write">
+<div id="commentEntitiy-write">
     <input type="text" id="commentWriter" placeholder="작성자">
     <input type="text" id="commentContents" placeholder="내용">
-    <button id="comment-write-btn" onclick="commentWrite()">댓글작성</button>
+    <button id="commentEntitiy-write-btn" onclick="commentWrite()">댓글작성</button>
 </div>
 
 
-<div id="comment-list">
+<div id="commentEntitiy-list">
     <table>
         <tr>
             <th>댓글번호</th>
@@ -27,11 +27,11 @@
             <th>내용</th>
             <th>작성시간</th>
         </tr>
-        <tr th:each="comment: ${commentList}">
-            <td th:text="${comment.id}"></td>
-            <td th:text="${comment.commentWriter}"></td>
-            <td th:text="${comment.commentContents}"></td>
-            <td th:text="${comment.commentSavedTime}"></td>
+        <tr th:each="commentEntitiy: ${commentList}">
+            <td th:text="${commentEntitiy.id}"></td>
+            <td th:text="${commentEntitiy.commentWriter}"></td>
+            <td th:text="${commentEntitiy.commentContents}"></td>
+            <td th:text="${commentEntitiy.commentSavedTime}"></td>
         </tr>
     </table>
 </div>
@@ -43,11 +43,11 @@
         const contents = document.getElementById("commentContents").value;
         console.log("작성자: ", writer);
         console.log("내용: ", contents);
-        const id = [[${board.id}]];
+        const id = [[${boardEntity.id}]];
         $.ajax({
 
             type: "post",
-            url: "/comment/save",
+            url: "/commentEntitiy/save",
             data: {
                 "commentWriter": writer,
                 "commentContents": contents,
@@ -69,7 +69,7 @@
                     output += "</tr>";
                 }
                 output += "</table>";
-                document.getElementById('comment-list').innerHTML = output;
+                document.getElementById('commentEntitiy-list').innerHTML = output;
                 document.getElementById('commentWriter').value = '';
                 document.getElementById('commentContents').value = '';
             },

@@ -1,7 +1,7 @@
 package com.study.nsuBoard.controller;
 
 import com.study.nsuBoard.Form.StudentForm;
-import com.study.nsuBoard.entity.Student;
+import com.study.nsuBoard.entity.StudentEntity;
 import com.study.nsuBoard.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,6 @@ import javax.servlet.http.HttpSession;
 @RequiredArgsConstructor
 @RequestMapping("/nsuBoard")
 public class StudentController {
-
     private final StudentService studentService;
 
     @GetMapping("/save")
@@ -34,13 +33,13 @@ public class StudentController {
         if (result.hasErrors()) {
             return "HomePage/save";
         }
-        Student student = new Student();
-        student.setStudent(form.getStudent());
-        student.setNickName(form.getNickName());
-        student.setPassword(form.getPassWord());
-        student.setDepartment(form.getDepartment());
+        StudentEntity studentEntity = new StudentEntity();
+        studentEntity.setStudent(form.getStudent());
+        studentEntity.setNickName(form.getNickName());
+        studentEntity.setPassword(form.getPassWord());
+        studentEntity.setDepartment(form.getDepartment());
 
-        studentService.join(student);
+        studentService.join(studentEntity);
 
         return "redirect:/";
     }
@@ -52,12 +51,9 @@ public class StudentController {
         return "MainPage/chooseBoardOrReservation";
     }
 
-
     @GetMapping("/LogOut")
     public String logOut(HttpSession session) {
         session.invalidate();
         return "HomePage/home";
     }
-
-
 }

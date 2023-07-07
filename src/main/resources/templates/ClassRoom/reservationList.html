@@ -9,6 +9,7 @@
       <thead>
       <tr>
         <th>번호</th>
+        <th>오전/오후</th>
         <th>시간</th>
         <th>분</th>
       </tr>
@@ -16,6 +17,7 @@
       <tbody>
       <tr th:each="reservation : ${reservationList}">
         <td th:text="${reservation.id}"></td>
+        <td th:text="${reservation.am_pm}"></td>
         <td th:text="${reservation.hour}"></td>
         <td th:text="${reservation.minute}"></td>
       </tr>

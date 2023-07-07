@@ -1,5 +1,106 @@
-*{
+#로그아웃{
+    position: absolute;
+    width: 168px;
+    height: 52px;
+    left: 1236px;
+    top: 3%;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    align-items: center;
+    text-align: center;
+}
+#프로필사진{
+    display: block;
+    margin: 20px auto 10px auto;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 65px;
+    top: 13%;
+    
+}
+#이름{
+    position: absolute;
+    width: 166px;
+    height: 57px;
+    left: 20px;
+    top: 25%;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+#학과{
+    position: absolute;
+    width: 207px;
+    height: 58px;
+    left: 0px;
+    top: 30%;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    align-items: center;
+    text-align: center;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+#지도{
 
+    position: absolute;
+    width: 900px;
+    height: 729px;
+    left: 285px;
+    top: 233px;
+    background: #000000;
+}
+#wrap{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+    
+  }
+iframe {
+    border: 1px solid black;
+    width: 1097px;
+    height: 729px;
+    left: 285px;
+    top: 233px;
+}
+#뒤로{
+
+
+    position: absolute;
+    width: 91px;
+    height: 75px;
+    left: 285px;
+    top: 133px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+*{
+    
     font-family: 'Inter';
     font-style: normal;
     list-style: none;
@@ -70,7 +171,7 @@
     height: 86px;
     left: 65px;
     top: 13%;
-
+    
 }
 #이름{
     position: absolute;
@@ -158,17 +259,6 @@
     user-select: none;
 }
 
-#게시글작성{
-    position: absolute;
-    width: 293px;
-    height: 73px;
-    left: 310px;
-    top: 260px;
-    font-size: 30px;
-    line-height: 42px;
-    display: flex;
-    align-items: center;
-}
 .line03{
     position: absolute;
     width: 962px;
@@ -199,22 +289,24 @@
     font-size: 20px;
     padding: 5px;
 }
-#제목입력{
+.말머리선택 input{
     position: absolute;
-    width: 720px;
-    height: 37px;
-    left: 520px;
-    top: 379px;
-    font-size: 20px;
+width: 720px;
+height: 37px;
+left: 520px;
+top: 379px;
+font-size: 20px;
 }
-#파일선택{
+.파일선택{
     position: absolute;
     width: 104px;
     height: 28px;
     left: 320px;
     top: 440px;
 }
-
+.파일선택 input{
+    font-size: 18px;
+}
 #내용작성{
     position: absolute;
     font-size: 20px;

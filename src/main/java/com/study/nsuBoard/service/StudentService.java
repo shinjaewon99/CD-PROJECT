@@ -1,7 +1,7 @@
 package com.study.nsuBoard.service;
 
 
-import com.study.nsuBoard.entity.Student;
+import com.study.nsuBoard.entity.StudentEntity;
 import com.study.nsuBoard.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,30 +16,28 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    public Long join(Student student) {
-        validateDuplicateStudentId(student);
-        studentRepository.save(student);
-        return student.getId();
+    public Long join(StudentEntity studentEntity) {
+        validateDuplicateStudentId(studentEntity);
+        studentRepository.save(studentEntity);
+        return studentEntity.getId();
     }
 
-    private void validateDuplicateStudentId(Student student) {
-        List<Student> findStudentId = studentRepository.findByStudentId(student.getStudent());
-        if (!(findStudentId.isEmpty())) {
+    private void validateDuplicateStudentId(StudentEntity studentEntity) {
+        List<StudentEntity> findStudentIdEntity = studentRepository.findByStudentId(studentEntity.getStudent());
+        if (!(findStudentIdEntity.isEmpty())) {
             throw new IllegalStateException("이미 등록된 학번입니다");
         }
     }
 
     public String login() {
-        Student student = new Student();
-        List<Student> findStudents = studentRepository.findByStudentId(student.getStudent());
-        String studentId = student.getStudent();
-        for (Student findStudent : findStudents) {
-            if (!(studentId == findStudent.getStudent())) {
+        StudentEntity studentEntity = new StudentEntity();
+        List<StudentEntity> findStudentEntities = studentRepository.findByStudentId(studentEntity.getStudent());
+        String studentId = studentEntity.getStudent();
+        for (StudentEntity findStudentEntity : findStudentEntities) {
+            if (!(studentId == findStudentEntity.getStudent())) {
                 return null;
             }
         }
-
-        return student.getStudent();
+        return studentEntity.getStudent();
     }
-
 }

@@ -16,9 +16,7 @@ public class ReservationRepository {
     private final EntityManager em;
 
     public void save(Reservation reservation) {
-//        Student student = new Student();
-//        reservation.setStudent(student);
-//        em.persist(student);
+
         em.persist(reservation);
     }
 
@@ -38,20 +36,6 @@ public class ReservationRepository {
                 .getResultList();
 
     }
-
-   /* public Optional<List<Reservation>> findByBetweenDate(final LocalDateTime startDate, final LocalDateTime endDate) {
-        List<Reservation> resultList = em.createQuery("SELECT r " +
-                        "FROM Reservation r " +
-                        "WHERE r.startDate BETWEEN :startDate AND :endDate " +
-                        " OR r.endDate BETWEEN :startDate AND :endDate", Reservation.class)
-                .setParameter("startDate", startDate)
-                .setParameter("endDate", endDate)
-                .getResultList();
-
-        return resultList.size() == 0 ? Optional.empty() : Optional.of(resultList);
-    }*/
-
-
 }
 
 

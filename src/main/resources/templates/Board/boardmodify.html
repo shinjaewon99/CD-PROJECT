@@ -1,38 +1,54 @@
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>게시물 작성폼</title>
+  <meta charset="utf-8">
+  <title>게시글 작성</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <link href="/css/Writingpage.css" rel="stylesheet">
 </head>
-
-<style>
-
-  .layout {
-    width : 500px;
-    margin : 0 auto;
-    margin-top : 40px;
-  }
-
-  .layout input {
-    width : 100%;
-    box-sizing : border-box
-  }
-
-  .layout textarea {
-    width : 100%;
-    margin-top : 10px;
-    min-height : 300px;
-  }
-
-</style>
-
 <body>
-<div class="layout">
-  <form th:action="@{/board/update/{id}(id = ${board.id})}" method="post">
-    <input name="title" type="text" th:value="${board.title}">
-    <textarea name="content" th:text="${board.content}"></textarea>
-    <button type="submit">수정</button>
+<body topmargin="0"  leftmargin="0" marginwidth="1" marginheight="0"></body>
+<div class="div01">
+  <a href="Mainpage.html"></a>
+  <img id="로고" src="/nsulogo.png" alt="로고">
+  <a id="게시판" href="/nsuBoard/Board">게시판</a>
+  <a id="강의실예약" href="/nsuBoard/Reservation">강의실 예약</a>
+  <form action="/" method="post">
+    <input id="로그아웃" type="submit" value="logout" name="logout"/>
+  </form>
+</div>
+
+<img id="프로필사진" src="/profile.png" alt="프로필사진" width="80" height="86"/>
+<span id="이름">신재원</span>
+<span id="학과">컴퓨터 학과</span>
+<div class="div02"></div>
+
+<span id="게시글작성">게시글 수정</span>
+<div class="line03"></div>
+<body>
+
+<div class="말머리선택">
+  <select name="말머리선택">
+    <option value="자유게시판">자유게시판</option>
+    <option value="강의게시판">강의게시판</option>
+    <option value="학교게시판">학교게시판</option>
+    <option value="학과게시판">학과게시판</option>
+  </select>
+  </form>
+</div>
+
+<div>
+  <form th:action="@{/boardEntity/update/{id}(id = ${boardEntity.id})}" method="post">
+    <input id="제목입력" name="title" type="text" th:value="${boardEntity.title}" class="말머리선택" placeholder="제목을 입력해 주세요.">
+    <textarea id="내용작성" name="content" th:text="${boardEntity.content}" cols="100" rows="15" placeholder="내용을 입력해 주세요."></textarea>
+    <button type="submit" class="작성버튼">수정</button>
   </form>
 </div>
 </body>
 </html>
+
+
+

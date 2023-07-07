@@ -1,7 +1,7 @@
 package com.study.nsuBoard.controller;
 
 
-import com.study.nsuBoard.dto.CommentDto;
+import com.study.nsuBoard.dto.CommentEntitiyDto;
 import com.study.nsuBoard.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,11 +21,11 @@ public class CommentController {
     private final CommentService commentService;
 
     @PostMapping("/save")
-    public ResponseEntity save(@ModelAttribute CommentDto commentDto) {
+    public ResponseEntity save(@ModelAttribute CommentEntitiyDto commentDto) {
         Long saveResult = commentService.save(commentDto);
 
 
-        List<CommentDto> commentDtoList = commentService.findAll(commentDto.getBoardId());
+        List<CommentEntitiyDto> commentDtoList = commentService.findAll(commentDto.getBoardId());
         return new ResponseEntity<>(commentDtoList, HttpStatus.OK);
 
 

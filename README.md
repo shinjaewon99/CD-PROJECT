@@ -24,3 +24,6 @@
 4. 강의실 예약 (해당 강의실의 시간 / 분 등록 예약, 예약 조회)
 
 
+## PDF
+[졸업작품.pdf](https://github.com/shinjaewon99/CD-PROJECT/files/11982363/default.pdf)
+
